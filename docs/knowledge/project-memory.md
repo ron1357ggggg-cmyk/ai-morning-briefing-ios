@@ -21,6 +21,9 @@
 ## HealthKit 與實機
 
 - 模擬器缺少可用的 HealthKit entitlement，必須直接使用示範快照，不能要求授權。
+- `HKError.errorNoData` 代表特定查詢沒有資料，不是整體更新失敗；必須轉成
+  `nil`，讓欄位顯示 `--`，不可向上拋出中止整份快照。
+- App 啟動流程必須先要求 HealthKit 授權，再執行健康資料更新。
 - 實機安裝需要 Developer Mode、Apple Development 憑證、Personal Team 與信任開發者。
 - 這台 Mac 曾缺少有效的 Apple WWDR G3 中繼憑證；Xcode 內建
   `AppleWWDRCA-2030.cer` 可修復簽署信任鏈。

@@ -21,6 +21,14 @@ struct SleepSummary: Equatable, Codable, Sendable {
     let deepHours: Double?
     let remHours: Double?
     let awakeHours: Double?
+
+    static let empty = SleepSummary(
+        totalHours: nil,
+        coreHours: nil,
+        deepHours: nil,
+        remHours: nil,
+        awakeHours: nil
+    )
 }
 
 struct HealthSnapshot: Equatable, Codable, Sendable {

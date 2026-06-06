@@ -30,3 +30,9 @@
 
 確認 RSS parser 有建立 `sourceURL`，且列表使用 `NavigationLink` 進入
 `NewsDetailView`。原文按鈕使用 SwiftUI `openURL`。
+
+## 顯示 `No data available`
+
+HealthKit 的 `HKError.errorNoData` 只表示該指標在指定期間沒有資料。查詢層必須
+回傳 `nil` 或空睡眠摘要，不可讓錯誤中止完整健康快照。其他錯誤，例如資料庫因
+裝置鎖定而無法存取，仍需向上回報。

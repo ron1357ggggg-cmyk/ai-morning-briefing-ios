@@ -232,6 +232,10 @@ final class HealthKitService: HealthDataProviding, @unchecked Sendable {
                 options: option
             ) { _, statistics, error in
                 if let error {
+                    if HealthQueryErrorPolicy.isMissingData(error) {
+                        continuation.resume(returning: nil)
+                        return
+                    }
                     continuation.resume(throwing: error)
                     return
                 }
@@ -261,6 +265,10 @@ final class HealthKitService: HealthDataProviding, @unchecked Sendable {
                 sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
             ) { _, samples, error in
                 if let error {
+                    if HealthQueryErrorPolicy.isMissingData(error) {
+                        continuation.resume(returning: nil)
+                        return
+                    }
                     continuation.resume(throwing: error)
                     return
                 }
@@ -287,6 +295,10 @@ final class HealthKitService: HealthDataProviding, @unchecked Sendable {
                 sortDescriptors: nil
             ) { _, samples, error in
                 if let error {
+                    if HealthQueryErrorPolicy.isMissingData(error) {
+                        continuation.resume(returning: .empty)
+                        return
+                    }
                     continuation.resume(throwing: error)
                     return
                 }
@@ -317,6 +329,14 @@ final class HealthKitService: HealthDataProviding, @unchecked Sendable {
             }
             store.execute(query)
         }
+    }
+}
+
+enum HealthQueryErrorPolicy {
+    static func isMissingData(_ error: Error) -> Bool {
+        let error = error as NSError
+        return error.domain == HKErrorDomain
+            && error.code == HKError.errorNoData.rawValue
     }
 }
 

@@ -1,4 +1,5 @@
 import XCTest
+import HealthKit
 @testable import AIMorningBriefing
 
 final class RecoveryCalculatorTests: XCTestCase {
@@ -42,5 +43,18 @@ final class RecoveryCalculatorTests: XCTestCase {
         XCTAssertEqual(items.count, 1)
         XCTAssertEqual(items.first?.category, .ai)
         XCTAssertEqual(items.first?.sourceURL?.absoluteString, "https://example.com/story")
+    }
+
+    func testHealthKitNoDataIsHandledAsMissingValue() {
+        let error = NSError(domain: HKErrorDomain, code: HKError.errorNoData.rawValue)
+        XCTAssertTrue(HealthQueryErrorPolicy.isMissingData(error))
+    }
+
+    func testOtherHealthKitErrorsAreNotHidden() {
+        let error = NSError(
+            domain: HKErrorDomain,
+            code: HKError.errorDatabaseInaccessible.rawValue
+        )
+        XCTAssertFalse(HealthQueryErrorPolicy.isMissingData(error))
     }
 }

@@ -28,6 +28,12 @@ final class AppModel {
     }
 
     func start() async {
+        do {
+            try await healthService.requestAuthorization()
+            healthAuthorizationRequested = true
+        } catch {
+            errorMessage = "Apple Health 授權：\(error.localizedDescription)"
+        }
         await refresh()
     }
 
