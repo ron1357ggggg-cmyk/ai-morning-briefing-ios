@@ -13,7 +13,10 @@ struct DashboardView: View {
                 updateStatus
                 RecoveryCard(score: appModel.briefing.recovery)
                 HealthSummaryCard(snapshot: appModel.briefing.health)
-                PeerBenchmarkCard()
+                PeerBenchmarkCard(
+                    demographics: appModel.demographics,
+                    results: appModel.peerBenchmarks
+                )
                 RecommendationCard(items: appModel.briefing.recommendations)
                 NewsListCard(items: appModel.briefing.news)
             }

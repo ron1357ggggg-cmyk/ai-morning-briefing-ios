@@ -139,16 +139,69 @@ struct RecommendationCard: View {
 }
 
 struct PeerBenchmarkCard: View {
+    @Environment(\.openURL) private var openURL
+    let demographics: UserDemographics
+    let results: [PeerBenchmarkResult]
+
     var body: some View {
         CardContainer {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 14) {
                 Label("同齡基準", systemImage: "person.2.fill")
                     .font(.headline)
                     .foregroundStyle(.teal)
-                Text("等待研究資料校準")
-                    .font(.title3.bold())
-                Text("正式顯示百分位前，需確認年齡、性別、裝置與量測方法相容的公開研究資料。")
-                    .font(.subheadline)
+
+                if demographics.age == nil {
+                    Text("缺少出生日期")
+                        .font(.title3.bold())
+                    Text("請在「健康」App 的健康詳細資料中填寫出生日期與生理性別，再重新授權。")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                } else if results.isEmpty {
+                    Text("目前資料不足")
+                        .font(.title3.bold())
+                    Text("需要靜止心率或 HRV 才能進行同齡比較。")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                } else {
+                    Text("\(demographics.age ?? 0) 歲 · \(demographics.sex.rawValue)")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+
+                    ForEach(results) { result in
+                        VStack(alignment: .leading, spacing: 7) {
+                            HStack {
+                                Text(result.metricTitle)
+                                    .font(.headline)
+                                Spacer()
+                                Text(result.valueText)
+                                    .font(.headline.monospacedDigit())
+                            }
+                            Text(result.label)
+                                .font(.title3.bold())
+                            if let percentile = result.percentile {
+                                ProgressView(value: Double(percentile), total: 100)
+                                    .tint(.teal)
+                                Text("同齡有利百分位：約第 \(percentile) 百分位")
+                                    .font(.subheadline)
+                            }
+                            Text(result.referenceText)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Button {
+                                openURL(result.sourceURL)
+                            } label: {
+                                Label(result.sourceTitle, systemImage: "doc.text")
+                            }
+                            .font(.caption)
+                        }
+                        if result.id != results.last?.id {
+                            Divider()
+                        }
+                    }
+                }
+
+                Text("僅供健康趨勢參考，不是醫療診斷；個人長期基準通常比單次人口比較更重要。")
+                    .font(.caption)
                     .foregroundStyle(.secondary)
             }
         }

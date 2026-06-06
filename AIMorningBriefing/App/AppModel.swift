@@ -9,6 +9,7 @@ final class AppModel {
     private let notificationService: NotificationService
     private let snapshotStore = DailyHealthSnapshotStore()
     private let recoveryCalculator = RecoveryCalculator()
+    private let peerBenchmarkService = PeerBenchmarkService()
 
     var briefing: MorningBriefing = .preview
     var isLoading = false
@@ -16,6 +17,8 @@ final class AppModel {
     var errorMessage: String?
     var updateMessage = "尚未更新"
     var isUsingLiveNews = false
+    var demographics: UserDemographics = .preview
+    var peerBenchmarks: [PeerBenchmarkResult] = []
 
     init(
         healthService: HealthDataProviding = HealthKitService(),
@@ -54,11 +57,16 @@ final class AppModel {
         defer { isLoading = false }
 
         async let healthTask = result { try await healthService.loadSnapshot() }
+        async let demographicsTask = healthService.loadDemographics()
         let window = BriefingWindow.currentTaipeiWindow()
         async let newsTask = result {
             try await newsService.fetchImportantNews(from: window.start, to: window.end)
         }
-        let (healthResult, newsResult) = await (healthTask, newsTask)
+        let (healthResult, newsResult, loadedDemographics) = await (
+            healthTask,
+            newsTask,
+            demographicsTask
+        )
         var health = briefing.health
         var news = briefing.news
         var failures: [String] = []
@@ -91,6 +99,11 @@ final class AppModel {
                     recovery: recovery
                 ),
                 news: news
+            )
+            demographics = loadedDemographics
+            peerBenchmarks = peerBenchmarkService.benchmarks(
+                health: health,
+                demographics: loadedDemographics
             )
             if UserDefaults.standard.bool(forKey: "morningNotificationEnabled") {
                 try? await notificationService.scheduleDailyBriefing(

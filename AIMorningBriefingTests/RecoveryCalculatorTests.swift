@@ -57,4 +57,43 @@ final class RecoveryCalculatorTests: XCTestCase {
         )
         XCTAssertFalse(HealthQueryErrorPolicy.isMissingData(error))
     }
+
+    func testMaleRestingHeartRateUsesNHANESPercentiles() {
+        let results = PeerBenchmarkService().benchmarks(
+            health: .preview,
+            demographics: UserDemographics(age: 35, sex: .male)
+        )
+        let restingHeartRate = results.first { $0.id == "restingHeartRate" }
+        XCTAssertNotNil(restingHeartRate)
+        XCTAssertGreaterThan(restingHeartRate?.percentile ?? 0, 75)
+        XCTAssertEqual(restingHeartRate?.confidence, .populationPercentile)
+    }
+
+    func testHRVIsMarkedAsResearchOrientation() {
+        let results = PeerBenchmarkService().benchmarks(
+            health: .preview,
+            demographics: UserDemographics(age: 35, sex: .male)
+        )
+        let hrv = results.first { $0.id == "hrv" }
+        XCTAssertNotNil(hrv)
+        XCTAssertEqual(hrv?.confidence, .researchOrientation)
+        XCTAssertTrue(hrv?.referenceText.contains("採樣不同") == true)
+        XCTAssertTrue(hrv?.referenceText.contains("近似校正") == true)
+    }
+
+    func testMissingAgeDoesNotProduceBenchmark() {
+        let results = PeerBenchmarkService().benchmarks(
+            health: .preview,
+            demographics: UserDemographics(age: nil, sex: .other)
+        )
+        XCTAssertTrue(results.isEmpty)
+    }
+
+    func testUnknownSexUsesCombinedReferenceInsteadOfMaleDefault() {
+        let results = PeerBenchmarkService().benchmarks(
+            health: .preview,
+            demographics: UserDemographics(age: 35, sex: .other)
+        )
+        XCTAssertTrue(results.allSatisfy { $0.referenceText.contains("全部性別參考") })
+    }
 }

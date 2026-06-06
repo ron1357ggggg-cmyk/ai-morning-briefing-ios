@@ -4,6 +4,7 @@ import HealthKit
 protocol HealthDataProviding: Sendable {
     func requestAuthorization() async throws
     func loadSnapshot() async throws -> HealthSnapshot
+    func loadDemographics() async -> UserDemographics
 }
 
 final class HealthKitService: HealthDataProviding, @unchecked Sendable {
@@ -120,6 +121,24 @@ final class HealthKitService: HealthDataProviding, @unchecked Sendable {
 #endif
     }
 
+    func loadDemographics() async -> UserDemographics {
+#if targetEnvironment(simulator)
+        return .preview
+#else
+        let birthDate = try? store.dateOfBirthComponents().date
+        let age = birthDate.flatMap {
+            Calendar.current.dateComponents([.year], from: $0, to: .now).year
+        }
+        let healthKitSex = try? store.biologicalSex().biologicalSex
+        let sex: BiologicalSex = switch healthKitSex {
+        case .female: .female
+        case .male: .male
+        default: .other
+        }
+        return UserDemographics(age: age, sex: sex)
+#endif
+    }
+
     private var readTypes: Set<HKObjectType> {
         let quantityIdentifiers: [HKQuantityTypeIdentifier] = [
             .bodyMass,
@@ -136,6 +155,12 @@ final class HealthKitService: HealthDataProviding, @unchecked Sendable {
         )
         if let sleep = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) {
             types.insert(sleep)
+        }
+        if let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth) {
+            types.insert(dateOfBirth)
+        }
+        if let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex) {
+            types.insert(biologicalSex)
         }
         return types
     }
