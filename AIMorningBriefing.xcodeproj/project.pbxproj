@@ -1,0 +1,188 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000101 /* AIMorningBriefingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000201 /* AIMorningBriefingApp.swift */; };
+		100000000000000000000102 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000202 /* RootView.swift */; };
+		100000000000000000000103 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000203 /* AppModel.swift */; };
+		100000000000000000000104 /* HealthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000204 /* HealthModels.swift */; };
+		100000000000000000000105 /* BriefingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000205 /* BriefingModels.swift */; };
+		100000000000000000000106 /* RecoveryCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000206 /* RecoveryCalculator.swift */; };
+		100000000000000000000107 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000207 /* HealthKitService.swift */; };
+		100000000000000000000108 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000208 /* NewsService.swift */; };
+		100000000000000000000109 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000209 /* NotificationService.swift */; };
+		10000000000000000000010A /* PeerBenchmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020A /* PeerBenchmarkService.swift */; };
+		10000000000000000000010B /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020B /* DashboardView.swift */; };
+		10000000000000000000010C /* DashboardCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020C /* DashboardCards.swift */; };
+		10000000000000000000010D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020D /* SettingsView.swift */; };
+		10000000000000000000010E /* RecoveryCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020E /* RecoveryCalculatorTests.swift */; };
+		10000000000000000000010F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020F /* XCTest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		100000000000000000000301 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 100000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 100000000000000000000401;
+			remoteInfo = AIMorningBriefing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000201 /* AIMorningBriefingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMorningBriefingApp.swift; sourceTree = "<group>"; };
+		100000000000000000000202 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		100000000000000000000203 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		100000000000000000000204 /* HealthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModels.swift; sourceTree = "<group>"; };
+		100000000000000000000205 /* BriefingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingModels.swift; sourceTree = "<group>"; };
+		100000000000000000000206 /* RecoveryCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryCalculator.swift; sourceTree = "<group>"; };
+		100000000000000000000207 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		100000000000000000000208 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		100000000000000000000209 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		10000000000000000000020A /* PeerBenchmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerBenchmarkService.swift; sourceTree = "<group>"; };
+		10000000000000000000020B /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		10000000000000000000020C /* DashboardCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCards.swift; sourceTree = "<group>"; };
+		10000000000000000000020D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		10000000000000000000020E /* RecoveryCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryCalculatorTests.swift; sourceTree = "<group>"; };
+		10000000000000000000020F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = System/Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
+		100000000000000000000210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100000000000000000000211 /* AIMorningBriefing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AIMorningBriefing.entitlements; sourceTree = "<group>"; };
+		100000000000000000000220 /* AIMorningBriefing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIMorningBriefing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000221 /* AIMorningBriefingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIMorningBriefingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		100000000000000000000601 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		100000000000000000000602 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (10000000000000000000010F /* XCTest.framework in Frameworks */, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000701 /* AIMorningBriefing */,
+				100000000000000000000702 /* AIMorningBriefingTests */,
+				100000000000000000000703 /* Frameworks */,
+				100000000000000000000704 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000701 /* AIMorningBriefing */ = {
+			isa = PBXGroup;
+			path = AIMorningBriefing;
+			sourceTree = "<group>";
+			children = (
+				100000000000000000000711 /* App */,
+				100000000000000000000712 /* Models */,
+				100000000000000000000713 /* Services */,
+				100000000000000000000714 /* Features */,
+				100000000000000000000715 /* Resources */,
+			);
+		};
+		100000000000000000000702 /* AIMorningBriefingTests */ = {isa = PBXGroup; path = AIMorningBriefingTests; sourceTree = "<group>"; children = (10000000000000000000020E /* RecoveryCalculatorTests.swift */, ); };
+		100000000000000000000703 /* Frameworks */ = {isa = PBXGroup; children = (10000000000000000000020F /* XCTest.framework */, ); name = Frameworks; sourceTree = "<group>"; };
+		100000000000000000000704 /* Products */ = {isa = PBXGroup; children = (100000000000000000000220 /* AIMorningBriefing.app */, 100000000000000000000221 /* AIMorningBriefingTests.xctest */, ); name = Products; sourceTree = "<group>"; };
+		100000000000000000000711 /* App */ = {isa = PBXGroup; path = App; sourceTree = "<group>"; children = (100000000000000000000201, 100000000000000000000202, 100000000000000000000203, ); };
+		100000000000000000000712 /* Models */ = {isa = PBXGroup; path = Models; sourceTree = "<group>"; children = (100000000000000000000204, 100000000000000000000205, ); };
+		100000000000000000000713 /* Services */ = {isa = PBXGroup; path = Services; sourceTree = "<group>"; children = (100000000000000000000206, 100000000000000000000207, 100000000000000000000208, 100000000000000000000209, 10000000000000000000020A, ); };
+		100000000000000000000714 /* Features */ = {isa = PBXGroup; path = Features; sourceTree = "<group>"; children = (100000000000000000000716 /* Dashboard */, 100000000000000000000717 /* Settings */, ); };
+		100000000000000000000715 /* Resources */ = {isa = PBXGroup; path = Resources; sourceTree = "<group>"; children = (100000000000000000000210, 100000000000000000000211, ); };
+		100000000000000000000716 /* Dashboard */ = {isa = PBXGroup; path = Dashboard; sourceTree = "<group>"; children = (10000000000000000000020B, 10000000000000000000020C, ); };
+		100000000000000000000717 /* Settings */ = {isa = PBXGroup; path = Settings; sourceTree = "<group>"; children = (10000000000000000000020D, ); };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		100000000000000000000401 /* AIMorningBriefing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000801;
+			buildPhases = (100000000000000000000901, 100000000000000000000601, 100000000000000000000902, );
+			buildRules = ();
+			dependencies = ();
+			name = AIMorningBriefing;
+			productName = AIMorningBriefing;
+			productReference = 100000000000000000000220;
+			productType = "com.apple.product-type.application";
+		};
+		100000000000000000000402 /* AIMorningBriefingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000802;
+			buildPhases = (100000000000000000000903, 100000000000000000000602, );
+			buildRules = ();
+			dependencies = (100000000000000000000A01, );
+			name = AIMorningBriefingTests;
+			productName = AIMorningBriefingTests;
+			productReference = 100000000000000000000221;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					100000000000000000000401 = {CreatedOnToolsVersion = 26.5; };
+					100000000000000000000402 = {CreatedOnToolsVersion = 26.5; TestTargetID = 100000000000000000000401; };
+				};
+			};
+			buildConfigurationList = 100000000000000000000803;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = zh_TW;
+			hasScannedForEncodings = 0;
+			knownRegions = (Base, zh_TW, en, );
+			mainGroup = 100000000000000000000002;
+			productRefGroup = 100000000000000000000704;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (100000000000000000000401, 100000000000000000000402, );
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000000000000000000902 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		100000000000000000000901 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000101, 100000000000000000000102, 100000000000000000000103,
+				100000000000000000000104, 100000000000000000000105, 100000000000000000000106,
+				100000000000000000000107, 100000000000000000000108, 100000000000000000000109,
+				10000000000000000000010A, 10000000000000000000010B, 10000000000000000000010C,
+				10000000000000000000010D,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		100000000000000000000903 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (10000000000000000000010E, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		100000000000000000000A01 = {isa = PBXTargetDependency; target = 100000000000000000000401; targetProxy = 100000000000000000000301; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		100000000000000000000B01 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_VERSION = 6.0; }; name = Debug; };
+		100000000000000000000B02 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_VERSION = 6.0; VALIDATE_PRODUCT = YES; }; name = Release; };
+		100000000000000000000B03 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_ENTITLEMENTS = AIMorningBriefing/Resources/AIMorningBriefing.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = AIMorningBriefing/Resources/Info.plist; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.ron1357ggggg.AIMorningBriefing; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = 1; }; name = Debug; };
+		100000000000000000000B04 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_ENTITLEMENTS = AIMorningBriefing/Resources/AIMorningBriefing.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = AIMorningBriefing/Resources/Info.plist; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.ron1357ggggg.AIMorningBriefing; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = 1; }; name = Release; };
+		100000000000000000000B05 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = com.ron1357ggggg.AIMorningBriefingTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 6.0; TARGETED_DEVICE_FAMILY = 1; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIMorningBriefing.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIMorningBriefing"; }; name = Debug; };
+		100000000000000000000B06 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = com.ron1357ggggg.AIMorningBriefingTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 6.0; TARGETED_DEVICE_FAMILY = 1; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIMorningBriefing.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIMorningBriefing"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		100000000000000000000801 = {isa = XCConfigurationList; buildConfigurations = (100000000000000000000B03, 100000000000000000000B04, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		100000000000000000000802 = {isa = XCConfigurationList; buildConfigurations = (100000000000000000000B05, 100000000000000000000B06, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		100000000000000000000803 = {isa = XCConfigurationList; buildConfigurations = (100000000000000000000B01, 100000000000000000000B02, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000001 /* Project object */;
+}
